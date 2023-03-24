@@ -1,0 +1,14 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        nums.sort()
+        a=[]
+        d=0
+        for i in range(0,len(nums)):
+            if nums[i] not in a:
+                a.append(nums[i])
+        for j in range(0,len(a)):
+            c=nums.count(a[j])
+            if(c>d):
+                b=a[j]
+                d=c
+        return(b)
